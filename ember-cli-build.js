@@ -9,7 +9,8 @@ module.exports = function(defaults) {
       extension: 'sass',
       includePaths: [
         'bower_components/csstyle',
-        'bower_components/gridle/sass/gridle'
+        'bower_components/gridle/sass/gridle',
+        'bower_components/reset-css/'
       ]
     },
 

@@ -3,12 +3,28 @@
 // ===========================================================
 // Init dependencies
 // 
+
+// ===========================================================
+// Helpers
+// ===========================================================
+// 
 @import "helpers/variables"
 @import "helpers/functions"
 @import "helpers/mixins"
 @import "helpers/tweaks"
 
+// ===========================================================
+// Csstyle
+// ===========================================================
+// BEM made easy.
+// 
 @import "csstyle"
+
+// ===========================================================
+// Gridle
+// ===========================================================
+// Grid system 
+// 
 @import "gridle"
 
 // Setup the grid
@@ -22,7 +38,33 @@
   margin: 0 auto
   max-width: 960px
 
-
 // Mobile
 [class*="gr-"]
   +gridle_set((mobile : (grid : 12, push : 0, pull : 0, prefix : 0, suffix : 0)))
+
+// ===========================================================
+// Reset
+// ===========================================================
+// Fuck you browsers.
+// 
+@import "_reset"
+
+// ===========================================================
+// General html overrides
+// ===========================================================
+// 
+
+// Reset ember margin body
+body
+  margin: 0
+
+// Reset links
+a
+  text-decoration: none
+
+// ===========================================================
+// Fonts
+// ===========================================================
+// 
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700)
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300,300italic,400italic,700italic,900,900italic&subset=latin,latin-ext)
