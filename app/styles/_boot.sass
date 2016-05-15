@@ -1,0 +1,28 @@
+// ===========================================================
+// Boot
+// ===========================================================
+// Init dependencies
+// 
+@import "helpers/variables"
+@import "helpers/functions"
+@import "helpers/mixins"
+@import "helpers/tweaks"
+
+@import "csstyle"
+@import "gridle"
+
+// Setup the grid
++gridle_setup((context: 12, gutter-width: 10px, direction: ltr, debug: true))
+
+// Generate gridle css classes to use in our html
++gridle_generate_classes()
+
+// Basic container
+.container
+  margin: 0 auto
+  max-width: 960px
+
+
+// Mobile
+[class*="gr-"]
+  +gridle_set((mobile : (grid : 12, push : 0, pull : 0, prefix : 0, suffix : 0)))

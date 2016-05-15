@@ -1,0 +1,10 @@
+<p>Trouvez votre baby sitter sur Bordeaux
+Baby Sitting Bordeaux vous permet de trouver votre prochaine baby sitter sur Bordeaux. C'est simple, gratuit et efficace 😀. Il vous suffit de trouver la personne qui correspond à vos besoins juste en dessous 😍.</p>
+
+{{#each model as |offer| }}
+  <img src="{{ offer.avatar }}" />
+  <h2>{{ offer.firstname }} {{ offer.lastname }}</h2>
+  <p>{{ offer.phone }}</p>
+  <p>{{ offer.description }}</p>
+  <hr>
+{{/each}}
