@@ -4,5 +4,5 @@ export default function(server) {
   // data will not be loaded in your tests.
 
   // server.createList('contact', 10);
-  //server.createList('offer', 30);
+  server.createList('offer', 30);
 }

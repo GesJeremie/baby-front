@@ -1,7 +1,26 @@
 <div class="navbar">
   <div class="navbar__container">
-    {{#link-to "index"}}Accueil{{/link-to}}
-    {{#link-to "contact"}}Contact{{/link-to}}
-    {{#link-to "legal"}}Legal{{/link-to}}
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="gr-3">
+          <div class="navbar__logo">
+            {{#link-to "index"}}<img src="/assets/images/bordeaux/logo.png" />{{/link-to}}
+          </div>
+        </div>
+        <div class="gr-7">
+          <ul class="navbar__links">
+            <li>{{#link-to "legal"}}Facebook{{/link-to}}</li>
+            <li>{{#link-to "contact"}}Contact{{/link-to}}</li>
+            <li>{{#link-to "legal"}}A propos{{/link-to}}</li>
+          </ul>
+        </div>
+        <div class="gr-2">
+          <div class="navbar__button">
+            <a href="#">Ajouter mon annonce !</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

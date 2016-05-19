@@ -1,0 +1,22 @@
+<div class="offer__container">
+  <div class="row">
+    <div class="gr-3">
+      <div class="offer__avatar" style="background-image: url('{{ offer.avatar }}')"></div>
+    </div>
+    <div class="gr-9">
+      <div class="offer__name" {{action "offerShow" offer}}>{{ offer.firstname }} {{ offer.lastname }}</div>
+      <div class="offer__age" {{action "offerShow" offer}}>{{ offer.age }} ans</div>
+      {{#if offer.isShowing}}
+        <div class="offer__description" {{action "offerShow" offer}}>{{offer.description}}</div>
+      {{else}}
+        <div class="offer__description" {{action "offerShow" offer}}>{{word-limit offer.description 50}}</div>
+      {{/if}}
+
+      {{#if offer.isShowing}}
+        <div class="+spacer"></div>
+        <a class="offer__button"><i class="fa fa-envelope"></i> Contacter par email</a>
+        <a class="offer__button"><i class="fa fa-phone"></i> Voir le numéro de téléphone</a>
+      {{/if}}
+    </div>
+  </div>
+</div>

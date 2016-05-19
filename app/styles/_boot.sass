@@ -5,6 +5,13 @@
 // 
 
 // ===========================================================
+// Csstyle
+// ===========================================================
+// BEM made easy.
+// 
+@import "csstyle"
+
+// ===========================================================
 // Helpers
 // ===========================================================
 // 
@@ -12,13 +19,6 @@
 @import "helpers/functions"
 @import "helpers/mixins"
 @import "helpers/tweaks"
-
-// ===========================================================
-// Csstyle
-// ===========================================================
-// BEM made easy.
-// 
-@import "csstyle"
 
 // ===========================================================
 // Gridle
@@ -37,6 +37,11 @@
 .container
   margin: 0 auto
   max-width: 960px
+
+// Fluid container (useful for navbars and stuff like that)
+.container-fluid
+  margin: 0 auto
+  width: 95%
 
 // Mobile
 [class*="gr-"]
@@ -114,6 +119,9 @@ body
   font-size: 18px
   line-height: 24px
   color: #686c70
+  font-style: normal
+  font-weight: 300
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004)
 
 // Reset links
 a

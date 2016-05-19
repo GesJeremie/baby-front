@@ -8,5 +8,6 @@ export default Model.extend({
   age: attr(),
   email: attr(),
   phone: attr(),
-  avatar: attr()
+  avatar: attr(),
+  isShowing: attr('string', { defaultValue: false })
 });
