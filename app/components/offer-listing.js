@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
+  isShowingContact: false,
   actions: {
     offerShow(currentOffer) {
       var store = this.get('store');
@@ -14,6 +15,9 @@ export default Ember.Component.extend({
       });
 
       currentOffer.set('isShowing', true);
+    },
+    toggleContact() {
+      this.toggleProperty('isShowingContact');
     }
   }
 });

@@ -14,8 +14,25 @@
 
       {{#if offer.isShowing}}
         <div class="+spacer"></div>
-        <a class="offer__button"><i class="fa fa-envelope"></i> Contacter par email</a>
+        <a class="offer__button" {{action "toggleContact"}}><i class="fa fa-envelope"></i> Contacter par email</a>
         <a class="offer__button"><i class="fa fa-phone"></i> Voir le numéro de téléphone</a>
+      {{/if}}
+
+
+      {{#if isShowingContact}}
+        {{#modal-dialog targetAttachment="center" 
+                        translucentOverlay=true 
+                        close="toggleContact"
+                        container-class="modal__container"
+                        overlay-class="modal__overlay"
+                        wrapper-class="modal__wrapper"
+        }}
+          <div class="offer__modal">
+            <div class="offer__avatar --modal" style="background-image: url('{{ offer.avatar }}')"></div>
+            <div class="offer__name --modal">{{ offer.firstname }} {{ offer.lastname}}</div>
+            <div class="offer__age --modal">{{ offer.age }} ans</div>
+          </div>
+        {{/modal-dialog}}
       {{/if}}
     </div>
   </div>

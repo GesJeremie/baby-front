@@ -28,15 +28,30 @@
     margin: 0 auto
     margin-top: 1em
 
+    +option(modal)
+      position: absolute
+      top: -5em
+      border: 3px solid white
+      margin: 0 auto
+      left: 0
+      right: 0
+
   +part(name)
     font-size: 25px
     color: #4c4f52
     font-weight: bold
     cursor: pointer
 
+    +option(modal)
+      margin-top: 1.9em
+      text-align: center
+
   +part(age)
     font-weight: bold
     cursor: pointer
+
+    +option(modal)
+      text-align: center
 
   +part(description)
     line-height: 30px
@@ -62,3 +77,12 @@
 
     &:hover, &:focus, &:active
       background-color: darken($color-primary, 5%)
+
+  +part(modal)
+    position: relative
+    min-width: 400px
+    padding:
+      top: 1em
+      right: 3em
+      left: 3em
+      bottom: 1em
