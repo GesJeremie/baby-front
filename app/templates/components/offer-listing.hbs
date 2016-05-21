@@ -28,9 +28,32 @@
                         wrapper-class="modal__wrapper"
         }}
           <div class="offer__modal">
+            <div class="offer__type"><i class="fa fa-envelope"></i> Prise de contact</div>
             <div class="offer__avatar --modal" style="background-image: url('{{ offer.avatar }}')"></div>
             <div class="offer__name --modal">{{ offer.firstname }} {{ offer.lastname}}</div>
             <div class="offer__age --modal">{{ offer.age }} ans</div>
+            <div class="container">
+              <div class="row">
+                <div class="gr-6">
+                  <div class="offer__form">
+                    <input type="text" name="email" placeholder="Email" />
+                    <span>Utilisé pour vous recontacter</span>
+                  </div>
+                </div>
+                <div class="gr-6">
+                  <div class="offer__form">
+                    <input type="text" name="phone" placeholder="Téléphone" />
+                    <span>Utilisé pour vous recontacter</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="offer__form">
+                <textarea name="message" placeholder="Votre message"></textarea>
+              </div>
+              <div class="+spacer"></div>
+              <button class="offer__button --expand" type="submit">Envoyer mon message</button>
+            </div>
           </div>
         {{/modal-dialog}}
       {{/if}}

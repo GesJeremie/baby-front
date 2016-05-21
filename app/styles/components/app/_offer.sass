@@ -47,6 +47,7 @@
       text-align: center
 
   +part(age)
+    margin-bottom: 1em
     font-weight: bold
     cursor: pointer
 
@@ -78,6 +79,9 @@
     &:hover, &:focus, &:active
       background-color: darken($color-primary, 5%)
 
+    +option(expand)
+      width: 100%
+
   +part(modal)
     position: relative
     min-width: 400px
@@ -86,3 +90,37 @@
       right: 3em
       left: 3em
       bottom: 1em
+
+  +part(type)
+    position: absolute
+    color: white
+    top: -35px
+    right: 0
+
+  +part(form)
+
+    input, textarea
+      display: block
+      width: 100%
+      height: 3em
+      border-radius: 5px
+      border: 0
+      border: 2px solid #ecf0f1
+      outline: 0
+      font-size: 16px
+      padding: 10px 15px
+
+      &:active, &:focus
+        border-color: darken(#ecf0f1, 5%)
+
+    textarea
+      min-height: 6em
+      margin-top: 1em
+
+    span
+      display: block
+      font-size: 11px
+      width: 100%
+    label
+      display: block
+      width: 100%
