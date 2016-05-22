@@ -8,5 +8,16 @@ export default function() {
     return { data };
   });
 
+  this.post('/api/offer-contacts', (db, request) => {
+    var offerContact = db['offer-contacts'].insert({
+      offer_id: request.offer_id,
+      email: request.email,
+      phone: request.phone,
+      messahe: request.message
+    });
+
+    return { type: 'offer-contacts', id: offerContact.id, attributes: offerContact };
+
+  });
 
 }

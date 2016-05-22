@@ -8,6 +8,8 @@ const Validations = buildValidations({
   ],
   phoneContact: [
     validator('presence', true),
+    validator('number', { allowString: true, integer: true }),
+    validator('length', { is: 10 })
   ],
   messageContact: [
     validator('presence', true),
@@ -55,14 +57,21 @@ export default Ember.Component.extend(Validations, {
     },
 
     submitContactEmail() {
-      /*
-      debugger;
-      this.validate().then(function() {
-        console.log('ok');
-      }).catch(function() {
-        debugger;
+
+      var store = this.get('store').createRecord('offer-contact', {
+        email: this.get('emailContact'),
+        phone: this.get('phoneContact'),
+        message: this.get('messageContact'),
+        offer_id: this.get('offer.id')
       });
-      */
+
+      store.save()
+        .then(function(offer) {
+          debugger;
+        })
+        .catch(function(reason) {
+          debugger;
+        });
     }
 
   }
