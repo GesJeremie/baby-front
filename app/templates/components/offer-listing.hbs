@@ -14,7 +14,7 @@
 
       {{#if offer.isShowing}}
         <div class="+spacer"></div>
-        <a class="offer__button" {{action "toggleContact"}}><i class="fa fa-envelope"></i> Contacter par email</a>
+        <a class="offer__button" {{action "toggleContactEmail"}}><i class="fa fa-envelope"></i> Contacter par email</a>
         <a class="offer__button"><i class="fa fa-phone"></i> Voir le numéro de téléphone</a>
       {{/if}}
 
@@ -22,7 +22,7 @@
       {{#if isShowingContact}}
         {{#modal-dialog targetAttachment="center" 
                         translucentOverlay=true 
-                        close="toggleContact"
+                        close="toggleContactEmail"
                         container-class="modal__container"
                         overlay-class="modal__overlay"
                         wrapper-class="modal__wrapper"
@@ -36,23 +36,27 @@
               <div class="row">
                 <div class="gr-6">
                   <div class="offer__form">
-                    <input type="text" name="email" placeholder="Email" />
                     <span>Utilisé pour vous recontacter</span>
+                    {{input type="text" value=emailContact placeholder="Email" autofocus="autofocus"}}
+                    <span class="offer__error">{{v-get this 'emailContact' 'message'}}</span>
                   </div>
                 </div>
                 <div class="gr-6">
                   <div class="offer__form">
-                    <input type="text" name="phone" placeholder="Téléphone" />
                     <span>Utilisé pour vous recontacter</span>
+                    {{input type="text" value=phoneContact placeholder="Téléphone" autofocus="autofocus"}}
+                    <span class="offer__error">{{v-get this 'phoneContact' 'message'}}</span>
                   </div>
                 </div>
               </div>
               <div class="clear"></div>
               <div class="offer__form">
-                <textarea name="message" placeholder="Votre message"></textarea>
+                {{textarea value=messageContact placeholder="Votre message"}}
+                <span class="offer__error">{{v-get this 'messageContact' 'message'}}</span>
+
               </div>
               <div class="+spacer"></div>
-              <button class="offer__button --expand" type="submit">Envoyer mon message</button>
+              <button class="offer__button --expand" disabled="{{isButtonContactDisabled}}" type="submit" {{action "submitContactEmail"}}>Envoyer mon message</button>
             </div>
           </div>
         {{/modal-dialog}}

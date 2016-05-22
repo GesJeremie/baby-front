@@ -75,9 +75,14 @@
     color: white
     transition: background-color 0.2 ease
     cursor: pointer
+    outline: 0
 
     &:hover, &:focus, &:active
       background-color: darken($color-primary, 5%)
+
+    &:disabled
+      opacity: 0.2
+      cursor: default
 
     +option(expand)
       width: 100%
@@ -124,3 +129,6 @@
     label
       display: block
       width: 100%
+
+  +part(error)
+    color: #e74c3c
