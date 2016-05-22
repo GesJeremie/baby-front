@@ -11,7 +11,7 @@ export default Mirage.Factory.extend({
   description: faker.lorem.paragraphs(),
   age: faker.list.random(18, 20, 56, 30, 21, 32),
   email: faker.internet.email,
-  phone: faker.phone.phoneNumber(),
+  phone: '0699245221',
   avatar: faker.list.cycle(
     'http://www.babysittingbordeaux.fr/uploads/avatars/medium/573b7962f3c9f.jpeg',
     'http://www.babysittingbordeaux.fr/uploads/avatars/medium/5730c457a6e57.jpeg',

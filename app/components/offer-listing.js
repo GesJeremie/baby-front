@@ -37,6 +37,9 @@ export default Ember.Component.extend(Validations, {
 
   }),
 
+  isShowingPhone: false,
+
+
   actions: {
 
     offerShow(currentOffer) {
@@ -54,6 +57,10 @@ export default Ember.Component.extend(Validations, {
 
     toggleContactEmail() {
       this.toggleProperty('isShowingContact');
+    },
+
+    toggleContactPhone() {
+      this.toggleProperty('isShowingPhone');
     },
 
     submitContactEmail() {

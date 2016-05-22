@@ -15,7 +15,7 @@
       {{#if offer.isShowing}}
         <div class="+spacer"></div>
         <a class="offer__button" {{action "toggleContactEmail"}}><i class="fa fa-envelope"></i> Contacter par email</a>
-        <a class="offer__button"><i class="fa fa-phone"></i> Voir le numéro de téléphone</a>
+        <a class="offer__button" {{action "toggleContactPhone" }}><i class="fa fa-phone"></i> Voir le numéro de téléphone</a>
       {{/if}}
 
 
@@ -58,6 +58,24 @@
               <div class="+spacer"></div>
               <button class="offer__button --expand" disabled="{{isButtonContactDisabled}}" type="submit" {{action "submitContactEmail"}}>Envoyer mon message</button>
             </div>
+          </div>
+        {{/modal-dialog}}
+      {{/if}}
+
+
+      {{#if isShowingPhone}}
+        {{#modal-dialog targetAttachment="center" 
+                        translucentOverlay=true 
+                        close="toggleContactPhone"
+                        container-class="modal__container"
+                        overlay-class="modal__overlay"
+                        wrapper-class="modal__wrapper"
+        }}
+          <div class="offer__modal">
+            <div class="offer__avatar --modal" style="background-image: url('{{ offer.avatar }}')"></div>
+            <div class="offer__name --modal">{{ offer.firstname }} {{ offer.lastname}}</div>
+            <div class="offer__age --modal">{{ offer.age }} ans</div>
+            <div class="offer__phone --modal">{{format-phone offer.phone }}</div>
           </div>
         {{/modal-dialog}}
       {{/if}}

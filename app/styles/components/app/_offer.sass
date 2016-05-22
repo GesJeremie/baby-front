@@ -19,6 +19,16 @@
     margin-top: 2em
     user-select: none
 
+  +part(phone)
+    +option(modal)
+      font-weight: bold
+      text-align: center
+      font-size: 20px
+      background-color: #f3f3f3
+      border-radius: 5px
+      padding: 1em
+
+
   +part(avatar)
     display: block
     width: 140px
@@ -45,6 +55,7 @@
     +option(modal)
       margin-top: 1.9em
       text-align: center
+      cursor: default
 
   +part(age)
     margin-bottom: 1em
@@ -53,6 +64,7 @@
 
     +option(modal)
       text-align: center
+      cursor: default
 
   +part(description)
     line-height: 30px
