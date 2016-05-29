@@ -1,6 +1,8 @@
-import JSONAPIAdapter from 'ember-data/adapters/json-api';
+import DS from 'ember-data';
+import config from '../config/environment';
 
-export default JSONAPIAdapter.extend({
+export default DS.RESTAdapter.extend({
   // Application specific overrides go here
-  namespace: 'api'
+  namespace: 'api/v1',
+  host: config.apiHost
 });

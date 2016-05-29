@@ -4,7 +4,7 @@
       <div class="offer__avatar" style="background-image: url('{{ offer.avatar }}')"></div>
     </div>
     <div class="gr-9">
-      <div class="offer__name" {{action "offerShow" offer}}>{{ offer.firstname }} {{ offer.lastname }}</div>
+      <div class="offer__name" {{action "offerShow" offer}}>{{ offer.fullname }}</div>
       <div class="offer__age" {{action "offerShow" offer}}>{{ offer.age }} ans</div>
       {{#if offer.isShowing}}
         <div class="offer__description" {{action "offerShow" offer}}>{{offer.description}}</div>
@@ -30,7 +30,7 @@
           <div class="offer__modal">
             <div class="offer__type"><i class="fa fa-envelope"></i> Prise de contact</div>
             <div class="offer__avatar --modal" style="background-image: url('{{ offer.avatar }}')"></div>
-            <div class="offer__name --modal">{{ offer.firstname }} {{ offer.lastname}}</div>
+            <div class="offer__name --modal">{{ offer.fullname }}</div>
             <div class="offer__age --modal">{{ offer.age }} ans</div>
             <div class="container">
               <div class="row">
@@ -73,7 +73,7 @@
         }}
           <div class="offer__modal">
             <div class="offer__avatar --modal" style="background-image: url('{{ offer.avatar }}')"></div>
-            <div class="offer__name --modal">{{ offer.firstname }} {{ offer.lastname}}</div>
+            <div class="offer__name --modal">{{ offer.fullname }}</div>
             <div class="offer__age --modal">{{ offer.age }} ans</div>
             <div class="offer__phone --modal">{{format-phone offer.phone }}</div>
           </div>

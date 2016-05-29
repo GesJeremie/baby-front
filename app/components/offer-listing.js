@@ -39,7 +39,6 @@ export default Ember.Component.extend(Validations, {
 
   isShowingPhone: false,
 
-
   actions: {
 
     offerShow(currentOffer) {
